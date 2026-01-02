@@ -36,10 +36,11 @@ class ExcelReporter implements Reporter {
 
                     // Update Actual (Column 5) - Optional, can put error message or "Success"
                     const actualCell = row.getCell(5);
+                    const timestamp = new Date().toLocaleString();
                     if (result.status === 'passed') {
-                        actualCell.value = 'User successfully logged in';
+                        actualCell.value = `[${timestamp}] User successfully logged in`;
                     } else {
-                        actualCell.value = `Failed: ${result.error?.message || 'Unknown error'}`;
+                        actualCell.value = `[${timestamp}] Failed: ${result.error?.message || 'Unknown error'}`;
                     }
                 }
             });
