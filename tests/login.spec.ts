@@ -4,6 +4,11 @@ test('Verify Login with Valid Credentials', async ({ page }) => {
     // 1. Go to login page
     await page.goto('https://www.enpnt.com/login');
 
+    // Zoom out to ensure elements are visible (User request)
+    await page.evaluate(() => {
+        (document.body.style as any).zoom = '0.75';
+    });
+
     // 2. Select Dancer Login
     await page.click('button:has-text("I am a dancer")');
 
