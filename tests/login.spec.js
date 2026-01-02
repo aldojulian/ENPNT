@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+const { test, expect } = require('@playwright/test');
 
 test('Verify Login with Valid Credentials', async ({ page }) => {
     // 1. Go to login page
@@ -6,7 +6,7 @@ test('Verify Login with Valid Credentials', async ({ page }) => {
 
     // // Zoom out to ensure elements are visible (User request)
     // await page.evaluate(() => {
-    //     (document.body.style as any).zoom = '0.75';
+    //     document.body.style.zoom = '0.75';
     // });
 
     // // 2. Select Dancer Login
